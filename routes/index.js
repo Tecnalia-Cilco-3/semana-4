@@ -1,5 +1,5 @@
 const routerx = require('express-promise-router');
-const categoriaRouter = require('./categoria');
+const categoriaRouter = require('./articulo');
 
 
 
