@@ -34,8 +34,7 @@ describe('Articulos Endpoints', () => {
                 nombre: 'articulo_test',
                 descripcion: 'lorem limpsus',
                 codigo: '2222',
-                precio_venta: 2525,
-                stock: 25,
+                estado: 1,
                 categoriaId: 1,
 
             })
