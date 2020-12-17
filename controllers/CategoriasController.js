@@ -1,28 +1,23 @@
 //const User = require('../models');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 const models = require('../models');
+const tokenServices = require('../services/token')
 
-exports.login = async(req, res, next) =>{
-    try{
-        const user = await models.user.findOne({where: {email: req.body.email}});
-        if(user){
-            const passwordIsValid = bcrypt.compareSync(req.body.password , user.password);
-            if(passwordIsValid){
-                const token = jwt.sign({
-                    id: user.id,
-                    name: user.name,
-                    email: user.email,
-                    rol: user.rol
-                }, 'config.secret', {
-                    expiresIn:86400,
-                });
+
+exports.login = async(req, res, next) => {
+    try {
+        const user = await models.user.findOne({ where: { email: req.body.email } });
+        if (user) {
+            const passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
+            if (passwordIsValid) {
+                const token = tokenServices.encode(user);
                 res.status(200).send({
-                    auth:true,
-                    accessToken: token,
+                    auth: true,
+                    tokenReturn: token,
                     user: user
                 })
-            }else{
+            } else {
                 res.status(401).json({
                     error: 'Invalid Password!'
                 })
@@ -32,26 +27,41 @@ exports.login = async(req, res, next) =>{
                 error: 'User Not Found'
             })
         }
-              
-    }    catch (error){
-            res.status(500).send({
-                message: 'Error ->'
-            })
-            next(error);
-        }
-    };
-exports.register = async(req, res, next)=>{
-        try{
-
-        } catch (error) {
-            
-        }
-    };
-
-exports.listar = async(req, res, next)=>{
-    try{
 
     } catch (error) {
-            
-        }
+        res.status(500).send({
+            message: 'Error ->'
+        })
+        next(error);
+    }
 };
+
+
+exports.register = async(req, res, next) => {
+    try {
+        req.body.password = bcrypt.hashSync(req.body.password, 10);
+        const user = await models.user.create(req.body);
+        res.status(200).json(user);
+    } catch (error) {
+
+    }
+};
+
+
+exports.listar = async(req, res, next) => {
+    try {
+        const user = await models.user.findAll();
+        res.status(200).json(user);
+    } catch (error) {
+
+    }
+};
+
+
+// exports.actualizar = async(req, res, next) => {
+//     try {
+//         const user = await models.finby
+//     } catch (error) {
+
+//     }
+// };

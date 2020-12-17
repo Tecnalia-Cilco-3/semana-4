@@ -69,7 +69,7 @@ export default {
         async registrarse(){
             try {
                 // if (register.username != "" ){
-                    let response = await this.$http.post('/api/auth/register', this.register)
+                    let response = await this.$http.post('/api/usuario/register', this.register)
                     console.log(response.data)
                     swal("Éxito","Registro Correcto", "success");
                     this.$router.push('/login');
