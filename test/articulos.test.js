@@ -15,7 +15,6 @@ describe('Articulos Endpoints', () => {
             .end((err, response) => {
                 var result = JSON.parse(response.text);
                 token = result.tokenReturn;
-                console.log(token)
                 done();
             });
     });
