@@ -6,7 +6,7 @@ const models = require('../models');
 
 exports.list = async(req, res, next) => {
     try {
-        const registro = await models.Articulo.findAll();
+        const registro = await models.Categoria.findAll();
         if(registro){
             res.status(200).json(registro);
         }else{
@@ -25,7 +25,7 @@ exports.list = async(req, res, next) => {
 
 exports.add = async(req, res, next) => {
     try {
-        const registro = await models.Articulo.create(req.body);
+        const registro = await models.Categoria.create(req.body);
         res.status(200).json(registro);
     } catch (error) {
         res.status(500).send({
@@ -38,7 +38,7 @@ exports.add = async(req, res, next) => {
 exports.update = async(req, res, next) => {
     try {
         
-            const registro = await models.Articulo.update({nombre: req.body.nombre, descripcion: req.body.descripcion, codigo: req.body.codigo},
+            const registro = await models.Categoria.update({nombre: req.body.nombre, descripcion: req.body.descripcion},
                 {
                     where: {
                         id: req.body.id
@@ -57,7 +57,7 @@ exports.update = async(req, res, next) => {
 exports.activate = async(req, res, next) => {
     try {
         
-            const registro = await models.Articulo.update({estado: 1},
+            const registro = await models.Categoria.update({estado: 1},
                 {
                     where: {
                         id: req.body.id
@@ -76,7 +76,7 @@ exports.activate = async(req, res, next) => {
 exports.deactivate = async(req, res, next) => {
     try {
         
-            const registro = await models.Articulo.update({estado: 0},
+            const registro = await models.Categoria.update({estado: 0},
                 {
                     where: {
                         id: req.body.id
