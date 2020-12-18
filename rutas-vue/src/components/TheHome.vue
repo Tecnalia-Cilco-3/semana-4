@@ -4,7 +4,7 @@
     <nav class="navbar texto-superior barra-superior">
       <img src="../assets/logo.png" width="100" height="100" class="d-inline-block align-top" alt="" loading="lazy">
       <h1 class="navbar-brand" href="#">
-        {{ user.NAME }} <hr> {{ user.email }}
+        {{ user.name }} <hr> {{ user.email }}
       </h1>
       <form class="form-inline my-2 my-lg-0">
         <!-- <div class="bg-info clearfix">

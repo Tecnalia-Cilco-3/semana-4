@@ -1,4 +1,4 @@
-var jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const models = require('../models');
 
 const checkToken = async(token) => {
@@ -32,7 +32,7 @@ module.exports = {
             id: user.id,
             name: user.name,
             email: user.email,
-            rol: user.rol
+            // rol: user.rol
         }, 'config.secret', {
             expiresIn: 86400,
         });

@@ -25,7 +25,7 @@ const auth = require('../../middlewares/auth')
 //.com/api/usuario/register
 router.get('/listar', auth.verificarVendedor, MiController.listar)
 router.post('/login', MiController.login)
-router.post('/register', auth.verificarAdministrador, MiController.register);
+router.post('/register', MiController.register);
 // router.put('/actualizar', MiController.actualizar)
 
 
