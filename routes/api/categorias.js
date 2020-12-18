@@ -24,10 +24,10 @@ const auth = require('../../middlewares/auth')
 //.com/api/usuario/login
 //.com/api/usuario/register
 router.get('/list', categoriaController.list);
-router.post('/add', categoriaController.add);
-router.put('/update', categoriaController.update);
-router.put('/activate', categoriaController.activate);
-router.put('/deactivate', categoriaController.deactivate);
+router.post('/add', auth.verificarAlmacenero, categoriaController.add);
+router.put('/update', auth.verificarAlmacenero, categoriaController.update);
+router.put('/activate', auth.verificarAlmacenero, categoriaController.activate);
+router.put('/deactivate', auth.verificarAlmacenero, categoriaController.deactivate);
 // router.put('/actualizar', MiController.actualizar)
 
 
