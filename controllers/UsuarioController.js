@@ -13,10 +13,10 @@ exports.login = async(req, res, next) => {
             if (passwordIsValid) {
                 const token = await tokenServices.encode(user);
                 res.status(200).send({
-                    auth: true,
+                    //auth: true,
                     tokenReturn: token,
                     user: user
-                })
+                });
             } else {
                 res.status(401).json({
                     error: 'Invalid Password!'
