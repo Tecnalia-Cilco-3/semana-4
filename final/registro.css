@@ -1,0 +1,165 @@
+.divImagen{
+	display:flex;
+	justify-content: space-between;
+	width: 60%;
+	margin-top: 10px;
+	z-index: 9;
+
+
+}
+
+.logoRegistros{
+	width: 200px;
+  height: 80px;
+	
+}
+.imgRegistroIzq{
+	width: 135px;
+	height: 135px;
+	margin-top: 60px;
+
+	
+}
+.imgRegistroDer{
+	width: 135px;
+	height: 135px;
+	margin-top: 40px;
+}
+
+/**Contenedor principal**/
+.contenedor_prinRegistro{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60%;
+	height: 74%;
+	margin-top: -50px;
+}
+/**Formulario**/
+.formularioRegistro {
+
+    background-color: #F5F5F5;
+    width: 95%;
+    height: 95%;
+    padding: 15px;
+    box-shadow: 10px 10px #E5E4E4;
+    margin-top: -30px;
+}
+
+.tituloRegistrar {
+	padding: 3px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    color: #0499D8;
+}
+/**Titulo del formulario**/
+.titulo1Registro {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+   	margin-bottom: 0px;
+   	margin-right: 3px;
+    padding: 3px;
+}
+.tituloRegistro1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+   	margin-bottom: 15px;
+    padding: 3px;
+}
+.txt_regis{
+	margin-bottom: 25px;
+}
+
+
+
+/******** datos *******/
+.datos{
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: space-between;
+	
+	height: 150px;
+	
+
+}
+.div_datos{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.datos input[type=text], input[type=password] {
+	font-family: 'Open Sans', sans-serif; 
+	font-size: 15px;
+	padding: 5px 5px;
+	height: 40px;
+    border-left: none;
+    border-top: 4px solid 	#FF0000;
+    border-right: none;
+    border-bottom: 4px solid 	#FF0000;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 250px;
+    outline: none;
+    background: #F5F5F5;
+}
+.bt_regis{
+	margin-top: 20px;
+	 margin-bottom: 5px;
+}
+.boton_registro{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    background-color: #0499D8;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-decoration: none;
+   margin-bottom: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+
+}
+.wRegistroo {
+    display: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+ 	
+}
+
+.ttNoCuenta {
+    font-family: 'Open Sans', sans-serif;
+    font-size:15px;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+   	margin-bottom: 0px;
+    padding: 3px;
+}
+
+.linkRegistro2{
+	color: #0499D8;
+	margin-left: 2px;
+	font-size:15px;
+}
+::placeholder {
+
+     font-family: 'Open Sans' sans-serif;
+     font-size: 18px;
+     font-weight: 300;
+     color: #9B9A9A;
+
+
+    }
